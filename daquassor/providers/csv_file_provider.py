@@ -3,10 +3,10 @@ from typing import Optional
 import pandas as pd
 from pydantic import BaseModel, StrictStr
 
-from daquassor.providers.i_provider import IProvider
+from daquassor.providers.i_data_provider import IDataProvider
 
 
-class CsvFileProvider(IProvider, BaseModel):
+class CsvFileDataProvider(IDataProvider, BaseModel):
     file_path: StrictStr
     delimiter: Optional[str] = ','
     quote_char: Optional[str] = '"'

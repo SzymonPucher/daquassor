@@ -1,10 +1,10 @@
 import pandas as pd
 from pydantic import BaseModel, StrictStr
 
-from daquassor.providers.i_provider import IProvider
+from daquassor.providers.i_data_provider import IDataProvider
 
 
-class JsonFileProvider(IProvider, BaseModel):
+class JsonFileDataProvider(IDataProvider, BaseModel):
     file_path: StrictStr
 
     def connect(self) -> None:

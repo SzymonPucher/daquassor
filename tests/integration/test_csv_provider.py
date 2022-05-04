@@ -1,6 +1,6 @@
 from pydantic import ValidationError
 import pytest
-from daquassor.providers.csv_file_provider import CsvFileProvider
+from daquassor.providers.csv_file_provider import CsvFileDataProvider
 import pandas as pd
 
 
@@ -19,14 +19,14 @@ def test_constructor(file_path, delimiter, quote_char, expected_error):
     # ACT
     if expected_error:
         with pytest.raises(expected_error):
-            CsvFileProvider(file_path=file_path, delimiter=delimiter, quote_char=quote_char)
+            CsvFileDataProvider(file_path=file_path, delimiter=delimiter, quote_char=quote_char)
     else:
-        CsvFileProvider(file_path=file_path, delimiter=delimiter, quote_char=quote_char)
+        CsvFileDataProvider(file_path=file_path, delimiter=delimiter, quote_char=quote_char)
 
 
 def test_reading_csv():
     # ARRANGE
-    csv_provider = CsvFileProvider(file_path=file_path)
+    csv_provider = CsvFileDataProvider(file_path=file_path)
 
     # ACT
     data = csv_provider.get_data()
@@ -38,7 +38,7 @@ def test_reading_csv():
 
 def test_writing_csv():
     # ARRANGE
-    csv_provider = CsvFileProvider(file_path=file_path)
+    csv_provider = CsvFileDataProvider(file_path=file_path)
     example = pd.DataFrame({'name': {0: 'Mark', 1: 'James'}, 'age': {0: 22, 1: 30}})
 
     # ACT

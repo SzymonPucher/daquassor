@@ -1,0 +1,6 @@
+{
+  "db_connection_url": "",
+  "jwt_secret": "",
+  "jwt_algorithm": "",
+  "encryption_key": ""
+}

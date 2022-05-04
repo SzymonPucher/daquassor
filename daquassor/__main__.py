@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"Main executable file"
+""" Main executable file """
 
 if __name__ == '__main__':
     msg_components = [
