@@ -1,17 +1,26 @@
-#!/usr/bin/env python
+import typer
 
-"Main executable file"
+from factories.data_extractors_factory import get_default_data_extractors
 
-if __name__ == '__main__':
-    msg_components = [
-        '',
-        'Hello user.',
-        '',
-        'I ran and did nothing.',
-        'At least I loaded fine :).',
-        '',
-        'Have a good day.',
-        '',
-    ]
-    msg = '\n'.join(msg_components)
-    print(msg)
+app = typer.Typer()
+
+
+@app.command()
+def init():
+    print(f"Initiating application.")
+
+
+@app.command()
+def api(port=5005):
+    print(f"Starting API on port {port}.")
+
+
+@app.command()
+def assess():
+    obj = get_default_data_extractors()
+    for ext in obj:
+        print(ext.get_data())
+
+
+if __name__ == "__main__":
+    app()
