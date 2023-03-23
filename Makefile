@@ -3,3 +3,4 @@ run:
 
 test:
 	pytest
+	flake8
