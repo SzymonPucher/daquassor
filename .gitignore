@@ -30,3 +30,5 @@ pip-delete-this-directory.txt
 .cache
 nosetests.xml
 coverage.xml
+.vscode/settings.json
+.idea/
