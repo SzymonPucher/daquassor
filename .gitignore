@@ -32,3 +32,4 @@ nosetests.xml
 coverage.xml
 .vscode/settings.json
 .idea/
+.eggs/
