@@ -25,4 +25,3 @@ dependencies = [
 [project.urls]
 "Homepage" = "https://github.com/szymonpucher/daquassor"
 "Bug Tracker" = "https://github.com/szymonpucher/daquassor/issues"
-

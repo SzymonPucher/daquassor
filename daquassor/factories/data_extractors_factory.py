@@ -11,7 +11,7 @@ def get_default_data_extractors():
         (
             "csv_file_data_extractor",
             dict(
-                file_path=r"C:\Users\Nowy\Projekty\daquassor\tests\integration\data\example.csv"
+                file_path=r"tests\integration\data\example.csv"
             ),
         )
     ]
