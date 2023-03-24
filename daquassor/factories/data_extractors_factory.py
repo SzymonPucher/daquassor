@@ -10,9 +10,7 @@ def get_default_data_extractors():
     default_data_extractors = [
         (
             "csv_file_data_extractor",
-            dict(
-                file_path=r"tests\integration\data\example.csv"
-            ),
+            dict(file_path=r"tests\integration\data\example.csv"),
         )
     ]
 
