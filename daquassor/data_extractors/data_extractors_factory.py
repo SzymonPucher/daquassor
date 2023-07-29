@@ -1,7 +1,7 @@
 from zope import component
 
 from data_extractors import register_data_extractors
-from interfaces.i_data_extractor import IDataExtractor
+from data_extractors.i_data_extractor import ITabularDataExtractor
 
 register_data_extractors()
 
@@ -16,7 +16,7 @@ def get_default_data_extractors():
 
     extractors = []
     for extractor_id, kwargs in default_data_extractors:
-        extractor = component.queryUtility(IDataExtractor, extractor_id)
+        extractor = component.queryUtility(ITabularDataExtractor, extractor_id)
 
         if extractor is None:
             raise LookupError(

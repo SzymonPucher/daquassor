@@ -1,7 +1,7 @@
 from .csv_file_data_extractor import CsvFileDataExtractor
-from interfaces.i_data_extractor import IDataExtractor
+from data_extractors.i_data_extractor import ITabularDataExtractor
 from zope import component
 
 component.provideUtility(
-    CsvFileDataExtractor, IDataExtractor, "csv_file_data_extractor"
+    CsvFileDataExtractor, ITabularDataExtractor, "csv_file_data_extractor"
 )

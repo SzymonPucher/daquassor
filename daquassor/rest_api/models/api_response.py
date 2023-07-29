@@ -3,7 +3,7 @@ from starlette.responses import JSONResponse
 
 class APIResponse(JSONResponse):
     def __init__(self, status_code, data=None, message=None, description=None):
-        super().__init__(status_code=status_code)
+        super().__init__(content=None, status_code=status_code)
         self.data = data
         self.message = message
         self.description = description

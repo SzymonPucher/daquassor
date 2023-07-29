@@ -4,10 +4,10 @@ import pandas as pd
 from pydantic import BaseModel, StrictStr
 from zope.interface import implementer
 
-from interfaces.i_data_extractor import IDataExtractor
+from data_extractors.i_data_extractor import ITabularDataExtractor
 
 
-@implementer(IDataExtractor)
+@implementer(ITabularDataExtractor)
 class CsvFileDataExtractor(BaseModel):
     file_path: StrictStr
     delimiter: Optional[str] = ","
