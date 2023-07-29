@@ -1,7 +1,7 @@
 from zope import component
 
 from data_extractors import register_data_extractors
-from data_extractors.i_data_extractor import ITabularDataExtractor
+from data_extractors.i_tabular_data_extractor import ITabularDataExtractor
 
 register_data_extractors()
 

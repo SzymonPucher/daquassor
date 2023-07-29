@@ -4,7 +4,7 @@ import pandas as pd
 from pydantic import BaseModel, StrictStr
 from zope.interface import implementer
 
-from data_extractors.i_data_extractor import ITabularDataExtractor
+from data_extractors.i_tabular_data_extractor import ITabularDataExtractor
 
 
 @implementer(ITabularDataExtractor)
