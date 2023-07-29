@@ -1,6 +1,6 @@
 from sqlmodel import SQLModel, create_engine
 
-from common.config_provider import ConfigProvider
+from common.config.config_provider import ConfigProvider
 
 
 def initialize_database():

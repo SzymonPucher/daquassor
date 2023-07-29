@@ -3,7 +3,7 @@ from daquassor.rest_api.routers import ready
 import uvicorn
 
 app = FastAPI()
-app.include_router(auth.router)
+app.include_router(ready.router)
 
 
 def run_api(port: int = 5005):

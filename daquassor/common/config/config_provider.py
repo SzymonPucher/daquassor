@@ -1,4 +1,4 @@
-from common.config import Config
+from common.config.config import Config
 
 
 class ConfigProvider:
