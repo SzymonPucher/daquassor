@@ -4,7 +4,6 @@ from .static_tabular_data_extractor import StaticTabularDataExtractor
 
 
 def register_data_extractors():
-    component_classes.update(dict(
-        static_tabular=StaticTabularDataExtractor,
-        csv_file=CsvFileDataExtractor
-    ))
+    component_classes.update(
+        dict(static_tabular=StaticTabularDataExtractor, csv_file=CsvFileDataExtractor)
+    )
