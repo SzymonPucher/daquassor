@@ -1,7 +1,5 @@
-from zope import component
-
+from common.factories.global_components import component_classes
 from data_extractors import register_data_extractors
-from data_extractors.i_tabular_data_extractor import ITabularDataExtractor
 
 register_data_extractors()
 
@@ -16,7 +14,7 @@ def get_default_data_extractors():
 
     extractors = []
     for extractor_id, kwargs in default_data_extractors:
-        extractor = component.queryUtility(ITabularDataExtractor, extractor_id)
+        extractor = component_classes.get(extractor_id, None)
 
         if extractor is None:
             raise LookupError(

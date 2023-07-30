@@ -7,7 +7,10 @@ from common.models.dataset_metric import DatasetMetric
 class IDatasetMetricRepository(ABC):
     @abstractmethod
     def get_dataset_metrics(
-        self, dataset_ids: Optional[List[str]], dataset_metric_ids: Optional[List[str]]
+        self,
+        data_source_ids: Optional[List[str]],
+        dataset_ids: Optional[List[str]],
+        dataset_metric_ids: Optional[List[str]],
     ) -> List[DatasetMetric]:
         """Gets metrics matching provided parameters.
         In case of no arguments provided, all metrics for all datasets are returned.
@@ -37,4 +40,9 @@ class IDatasetMetricRepository(ABC):
     @abstractmethod
     def delete_dataset_metrics(self, dataset_id: str) -> None:
         """Removes all metrics for given dataset."""
+        pass
+
+    @abstractmethod
+    def delete_data_source_metrics(self, data_source_id: str) -> None:
+        """Removes all metrics for given data_source."""
         pass

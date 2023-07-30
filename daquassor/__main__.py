@@ -1,7 +1,7 @@
 import typer
 
-from rest_api import run_api
-from rest_api.init_db import initialize_database
+from api import run_api
+from api.init_db import initialize_database
 
 app = typer.Typer()
 

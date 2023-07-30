@@ -1,6 +1,6 @@
 from fastapi import Request
 
-from rest_api.models.api_response import APIResponse
+from api.models.api_response import APIResponse
 
 
 def initialize_exception_handlers(app):

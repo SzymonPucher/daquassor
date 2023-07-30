@@ -2,7 +2,7 @@ from pydantic import ValidationError
 import pytest
 import pandas as pd
 
-from data_extractors.csv import CsvFileDataExtractor
+from data_extractors import CsvFileDataExtractor
 
 file_path = "tests/integration/data/example.csv"
 

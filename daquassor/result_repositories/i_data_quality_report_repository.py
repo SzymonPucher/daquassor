@@ -7,7 +7,10 @@ from common.models.report import Report
 class IDataQualityReportRepository(ABC):
     @abstractmethod
     def get_reports(
-        self, dataset_ids: Optional[List[str]], report_ids: Optional[List[str]]
+        self,
+        data_source_ids: Optional[List[str]],
+        dataset_ids: Optional[List[str]],
+        report_ids: Optional[List[str]],
     ) -> List[Report]:
         """Gets reports matching provided parameters.
         In case of no arguments provided, all reports for all datasets are returned.
@@ -37,4 +40,9 @@ class IDataQualityReportRepository(ABC):
     @abstractmethod
     def delete_dataset_reports(self, dataset_id: str) -> None:
         """Removes all reports for given dataset."""
+        pass
+
+    @abstractmethod
+    def delete_data_source_reports(self, data_source_id: str) -> None:
+        """Removes all reports for given data source."""
         pass

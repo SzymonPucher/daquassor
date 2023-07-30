@@ -18,8 +18,6 @@ dependencies = [
     "pandas",
     "pydantic",
     "typer",
-    "zope.component",
-    "zope.interface",
 ]
 
 [project.urls]

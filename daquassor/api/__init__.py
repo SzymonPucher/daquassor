@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from daquassor.rest_api.routers import ready
+from daquassor.api.routers import ready
 import uvicorn
 
 app = FastAPI()

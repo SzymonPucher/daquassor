@@ -1,14 +1,12 @@
 from typing import Optional
 
 import pandas as pd
-from pydantic import BaseModel, StrictStr
-from zope.interface import implementer
+from pydantic import StrictStr, BaseModel
 
 from data_extractors.i_tabular_data_extractor import ITabularDataExtractor
 
 
-@implementer(ITabularDataExtractor)
-class CsvFileDataExtractor(BaseModel):
+class CsvFileDataExtractor(ITabularDataExtractor, BaseModel):
     file_path: StrictStr
     delimiter: Optional[str] = ","
     quote_char: Optional[str] = '"'
