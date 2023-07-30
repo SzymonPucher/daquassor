@@ -15,9 +15,7 @@ file_path = "tests/integration/data/example.csv"
         ("file_path_1.csv", [","], '"', ValidationError),
         ("file_path_1.csv", ",", ('"',), ValidationError),
         (123, ",", '"', ValidationError),
-        # numeric value can potentially be a delimiter, although it's confusing
         ("file_path_1.csv", 37, '"', ValidationError),
-        # same goes for quote_char
         ("file_path_1.csv", ",", 6543, ValidationError),
     ],
 )
