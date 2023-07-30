@@ -8,8 +8,8 @@ from data_extractors.i_tabular_data_extractor import ITabularDataExtractor
 
 class CsvFileDataExtractor(ITabularDataExtractor, BaseModel):
     file_path: StrictStr
-    delimiter: Optional[str] = ","
-    quote_char: Optional[str] = '"'
+    delimiter: Optional[StrictStr] = ","
+    quote_char: Optional[StrictStr] = '"'
 
     def get_data(self, chunk_size: Optional[int] = None) -> pd.DataFrame:
         return pd.read_csv(
