@@ -1,5 +1,5 @@
-from pydantic import BaseModel, constr
+from pydantic import BaseModel, Field
 
 
 class WorkflowConfig(BaseModel):
-    id: constr(strict=True, min_length=1)
+    id: str = Field(..., strict=True, min_length=1)

@@ -1,6 +1,6 @@
-from pydantic import BaseModel, constr
+from pydantic import BaseModel, constr, Field
 
 
 class Report(BaseModel):
-    id: constr(strict=True, min_length=1)
-    data_source_id: constr(strict=True, min_length=1)
+    id: str = Field(..., strict=True, min_length=1)
+    data_source_id: str = Field(..., strict=True, min_length=1)
