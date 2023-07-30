@@ -1,7 +1,5 @@
-from zope import component
-
+from common.factories.global_components import component_classes
 from data_extractors import register_data_extractors
-from interfaces.i_data_extractor import IDataExtractor
 
 register_data_extractors()
 
@@ -10,15 +8,13 @@ def get_default_data_extractors():
     default_data_extractors = [
         (
             "csv_file_data_extractor",
-            dict(
-                file_path=r"tests\integration\data\example.csv"
-            ),
+            dict(file_path=r"tests\integration\data\example.csv"),
         )
     ]
 
     extractors = []
     for extractor_id, kwargs in default_data_extractors:
-        extractor = component.queryUtility(IDataExtractor, extractor_id)
+        extractor = component_classes.get(extractor_id, None)
 
         if extractor is None:
             raise LookupError(

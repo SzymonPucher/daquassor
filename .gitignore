@@ -33,3 +33,6 @@ coverage.xml
 .vscode/settings.json
 .idea/
 .eggs/
+
+# sqlite
+*.db

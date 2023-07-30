@@ -1,13 +1,10 @@
-import os
-from pathlib import Path
+from common.factories.global_components import component_classes
+from .csv_file_data_extractor import CsvFileDataExtractor
+from .static_tabular_data_extractor import StaticTabularDataExtractor
 
 
 def register_data_extractors():
-    src_root = Path(__file__).resolve().parent.parent
-
-    for submodule in [
-        x
-        for x in os.listdir(os.path.join(src_root, "data_extractors"))
-        if "." not in x and not x.startswith("_")
-    ]:
-        exec(f"from data_extractors import {submodule}")
+    component_classes.update(dict(
+        static_tabular=StaticTabularDataExtractor,
+        csv_file=CsvFileDataExtractor
+    ))

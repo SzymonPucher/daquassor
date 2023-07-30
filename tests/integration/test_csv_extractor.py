@@ -2,7 +2,7 @@ from pydantic import ValidationError
 import pytest
 import pandas as pd
 
-from data_extractors.csv import CsvFileDataExtractor
+from data_extractors import CsvFileDataExtractor
 
 file_path = "tests/integration/data/example.csv"
 
@@ -15,13 +15,11 @@ file_path = "tests/integration/data/example.csv"
         ("file_path_1.csv", [","], '"', ValidationError),
         ("file_path_1.csv", ",", ('"',), ValidationError),
         (123, ",", '"', ValidationError),
-        # numeric value can potentially be a delimiter, although it's confusing
-        ("file_path_1.csv", 37, '"', None),
-        # same goes for quote_char
-        ("file_path_1.csv", ",", 6543, None),
+        ("file_path_1.csv", 37, '"', ValidationError),
+        ("file_path_1.csv", ",", 6543, ValidationError),
     ],
 )
-def test_inititation(file_path, delimiter, quote_char, expected_error):
+def test_initiation(file_path, delimiter, quote_char, expected_error):
     # ACT
     if expected_error:
         with pytest.raises(expected_error):
